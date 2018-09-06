@@ -49,14 +49,7 @@ function sass() {
       }).on("error", $.sass.logError)
     )
     .pipe(
-      $.if(
-        PRODUCTION,
-        postcss([
-          require("precss"),
-          require("autoprefixer"),
-          require("postcss-uncss")
-        ])
-      )
+      $.if(PRODUCTION, postcss([require("precss"), require("autoprefixer")]))
     )
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
     .pipe(gulp.dest("dist/css"));

@@ -1,4 +1,153 @@
 extends ./layouts/_layout.pug
+include mixins/_tile
 
 block content
-    h1 Dit is de template
+    .content
+        center
+            a(href="https://www.collishop.be/e/nl/cs/kolossale-kortingen" target="_blank")
+                img(src="../assets/img/kkd-logo-nl.jpg")
+            img#teller(src="https://s.mmgo.io/t/BD09" alt="aftelklok")
+        row
+            columns(small=6)
+                +tile({
+                    image: "terras-en-tuin",
+                    discount: "tot-50",
+                    categorie1: "op",
+                    categorie2: "Terras en Tuin",
+                    cta: "Echte buitenkansjes",
+                    link: "https://www.collishop.be/e/nl/cs/superkorting-terras-en-tuin"
+                })
+            columns(small=6)
+                +tile({
+                    image: "huishouden",
+                    discount: "tot-50",
+                    categorie1: "op",
+                    categorie2: "Huishouden",
+                    cta: "Poets voordelig",
+                    link: "https://www.collishop.be/e/nl/cs/superkorting-huishouden"
+                })
+        row
+            columns(small=12 large=4)
+                +tile({
+                    image: "keukenartikelen",
+                    discount: "tot-40",
+                    categorie1: "op",
+                    categorie2: "Keukenartikelen",
+                    cta: "Proef van de kortingen",
+                    link: "https://www.collishop.be/e/nl/cs/superkorting-keukenartikelen"
+                })
+            columns(small=12 large=4)
+                +tile({
+                    image: "kleerkasten",
+                    discount: "-20",
+                    categorie1: "op een selectie",
+                    categorie2: "Kleerkasten",
+                    cta: "Maak je keuze",
+                    link: "https://www.collishop.be/e/nl/cs/superkorting-kleerkasten-commodes"
+                })
+            columns(small=12 large=4)
+                +tile({
+                    image: "seb",
+                    discount: "-20",
+                    categorie1: "op ALLE",
+                    categorie2: "snelkookpannen van Seb",
+                    cta: "Snel naar de deals",
+                    link: "https://www.collishop.be/e/nl/cs/superkorting-snelkookpannen"
+                })
+        row
+            columns(small=6)
+                +tile({
+                    image: "elektro",
+                    discount: "tot-50",
+                    categorie1: "op",
+                    categorie2: "Elektro",
+                    cta: "Schokkende kortingen",
+                    link: "https://www.collishop.be/e/nl/cs/superkorting-elektro"
+                })
+            columns(small=6)
+                +tile({
+                    image: "slapen",
+                    discount: "tot-50",
+                    categorie1: "op",
+                    categorie2: "Slapen",
+                    cta: "Slaap op je beide oren",
+                    link: "https://www.collishop.be/e/nl/cs/superkorting-slapen"
+                })
+        row
+            columns(small=12 large=4)
+                +tile({
+                    image: "strijken",
+                    discount: "tot-35",
+                    categorie1: "op",
+                    categorie2: "Strijken",
+                    cta: "Stoom door de kortingen",
+                    link: "https://www.collishop.be/e/nl/cs/superkorting-strijken"
+                })
+            columns(small=12 large=4)
+                +tile({
+                    image: "vuilnisbakken",
+                    discount: "tot-35",
+                    categorie1: "op",
+                    categorie2: "Vuilnisbakken",
+                    cta: "Gooi deze kans niet weg",
+                    link: "https://www.collishop.be/e/nl/cs/superkorting-vuilnisbakken"
+                })
+            columns(small=12 large=4)
+                +tile({
+                    image: "seb",
+                    discount: "tot-40",
+                    categorie1: "op",
+                    categorie2: "Mooi en Gezond",
+                    cta: "Leg jezelf in de watten",
+                    link: "https://www.collishop.be/e/nl/cs/superkorting-mooi-en-gezond"
+                })
+        row
+            columns(small=6)
+                +tile({
+                    image: "opbergen",
+                    discount: "tot-50",
+                    categorie1: "op",
+                    categorie2: "Opbergen",
+                    cta: "Bespaar tot de helft",
+                    link: "https://www.collishop.be/e/nl/cs/superkorting-opbergen"
+                })
+            columns(small=6)
+                +tile({
+                    image: "koken-en-tafelen",
+                    discount: "tot-50",
+                    categorie1: "op",
+                    categorie2: "Koken en Tafelen",
+                    cta: "Kook met kortingen",
+                    link: "https://www.collishop.be/e/nl/cs/superkorting-koken-en-tafelen"
+                })
+        row
+            columns(small=12 large=4)
+                +tile({
+                    image: "wonen",
+                    discount: "tot-45",
+                    categorie1: "op",
+                    categorie2: "Wonen",
+                    cta: "Kies voor een knusse thuis",
+                    link: "https://www.collishop.be/e/nl/cs/superkorting-wonen"
+                })
+            columns(small=12 large=4)
+                +tile({
+                    image: "reizen",
+                    discount: "tot-35",
+                    categorie1: "op",
+                    categorie2: "Reizen",
+                    cta: "Trek eropuit",
+                    link: "https://www.collishop.be/e/nl/cs/superkorting-reizen"
+                })
+            columns(small=12 large=4)
+                +tile({
+                    image: "dieren",
+                    discount: "tot-50",
+                    categorie1: "op",
+                    categorie2: "Dieren",
+                    cta: "Verwen je trouwe vriend",
+                    link: "https://www.collishop.be/e/nl/cs/superkorting-dieren"
+                })
+        center
+            a(href="https://www.collishop.be/e/nl/cs/inch-matrasbeschermer-hoes-london-badstof-pu" target="_blank")
+                img(src="../assets/img/weekdeal-nl.jpg")

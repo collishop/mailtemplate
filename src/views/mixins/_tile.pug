@@ -1,0 +1,13 @@
+include _button
+
+mixin tile(data)
+    a(href=data.link target="_blank")
+        center
+            div.tile
+                img.topImage(src=`../assets/img/${data.image}.jpg`)
+                img(src=`../assets/img/${data.discount}.png`)
+                div.tileText
+                    p.centerText= data.categorie1
+                        br
+                        strong= " "+data.categorie2
+                +button(data.cta)
