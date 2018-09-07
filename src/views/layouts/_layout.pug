@@ -1,13 +1,19 @@
+doctype html
 html
     head
         link(rel="stylesheet" href="css/mail.css")
+        meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+        meta(name="viewport" content="width=device-width")
     body
-        container
-            block header
-                include ./_header.pug
+        table.body
+            tr
+                td
+                    container
+                        block header
+                            include ./_header.pug
 
-            block content
+                        block content
 
-            block footer
-                include ./_footer.pug
+                        block footer
+                            include ./_footer.pug
 

@@ -41,7 +41,7 @@ function pages() {
 // Sass → CSS
 function sass() {
   return gulp
-    .src("src/sass/mail.sass")
+    .src("src/assets/sass/mail.sass")
     .pipe($.sourcemaps.init())
     .pipe(
       $.sass({
@@ -57,7 +57,12 @@ function sass() {
 
 // Copy images
 function images() {
-  return gulp.src("src/img/**/*").pipe(gulp.dest("./dist/assets/img"));
+  return (
+    gulp
+      .src(["src/assets/img/**/*", "!src/assets/img/archive/**/*"])
+      // .pipe($.imagemin())
+      .pipe(gulp.dest("./dist/assets/img"))
+  );
 }
 
 // Inline CSS and minify HTML
@@ -82,9 +87,11 @@ function watch() {
     .watch("src/views/**/*.pug")
     .on("all", gulp.series(pages, inline, browser.reload));
   gulp
-    .watch(["src/sass/**/*.sass"])
+    .watch(["src/assets/sass/**/*.sass"])
     .on("all", gulp.series(sass, pages, inline, browser.reload));
-  gulp.watch("src/img/**/*").on("all", gulp.series(images, browser.reload));
+  gulp
+    .watch("src/assets/img/**/*")
+    .on("all", gulp.series(images, browser.reload));
 }
 
 // Inlines CSS in HTML, add media query CSS in <style> tag, compresses the HTML
@@ -139,8 +146,8 @@ function zip() {
   var htmlFiles = getHtmlFiles(dist);
 
   var moveTasks = htmlFiles.map(function(file) {
-    var sourcePath = path.join(dist, file);
-    var fileName = path.basename(sourcePath, ext);
+    var sourcePath = path.join(dist, file); //           dist/index.html
+    var fileName = path.basename(sourcePath, ext); //    index
 
     var moveHTML = gulp.src(sourcePath).pipe(
       $.rename(function(path) {
