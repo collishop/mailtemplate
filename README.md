@@ -38,3 +38,19 @@ Run `npm start` to kick off the build process. A new browser tab will open with 
 Run `npm run build` to inline your CSS into your HTML along with the rest of the build process.
 
 Run `npm run zip` to build as above, then zip HTML and images for easy deployment to email marketing services.
+
+## mixins
+
+- tiles
+  takes an object with following structure:
+  {
+  image: "imagename without extension",
+  discount: "imagename without extension - resulting in discount-image",
+  categorie1: "string",
+  categorie2: "string",
+  cta: "string",
+  link: "url"
+  }
+- legals
+  takes an array of following structure (each legal on a seperate line)
+  ["string 1", "string 2", "string 3"]

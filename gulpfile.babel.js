@@ -111,20 +111,17 @@ function inliner(css) {
     )
     .pipe(
       $.replace,
-      "<!-- <style> -->",
+      "<!-- <style>-->",
       `<style>${mqCss}</style>`
     )
     .pipe(
       $.replace,
-      '<link rel="stylesheet" type="text/css" href="css/mail.css">',
+      '<link rel="stylesheet" href="css/mail.css">',
       ""
     )
     .pipe(
       $.htmlmin,
-      {
-        collapseWhitespace: true,
-        minifyCSS: true
-      }
+      { collapseWhitespace: true, minifyCSS: true }
     );
 
   return pipe();

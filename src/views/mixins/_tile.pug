@@ -1,5 +1,5 @@
 mixin tile(data)
-    a(href=data.link target="_blank")
+    a(href=data.link target="_blank").tileLink
         img.topImage(src=`assets/img/${data.image}.jpg`)
         wrapper.tile
             center
@@ -8,7 +8,8 @@ mixin tile(data)
                     br
                     strong= " "+data.categorie2
                             a(href=link)
-                a(href=data.link target="_blank")
+                a(href=data.link target="_blank").buttonLink
                     wrapper.btn.pink
                         p.centerText= data.cta
-                            span#arrow ►
+                            span#arrow
+                                img(src="assets/img/button-arrow.png", alt="arrow")
